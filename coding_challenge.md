@@ -95,13 +95,9 @@ your challenge.
 Here are some technologies we are more familiar with:
 
 * Python
-* JavaScript
-* Ruby
-* PHP
 * Go
-* C++
-* Haskell
-* Java
+* Node.js
+* JavaScript (React)
 
 You are also free to use any web framework. If you choose to use a framework
 that results in boilerplate code in the repository, please detail in your
@@ -111,7 +107,8 @@ README which code was written by you (as opposed to generated code).
 
 The front-end should ideally be a single page app with a single `index.html`
 linking to external JS/CSS/etc. You may take this opportunity to demonstrate
-your CSS3 or HTML5 knowledge.
+your CSS3 or HTML5 knowledge. We encourage you to explore any and all page
+optimizations at your disposal: SSR, service wokers, file compression, etc.
 
 Host it!
 --------
