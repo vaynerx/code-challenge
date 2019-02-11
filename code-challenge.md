@@ -1,53 +1,124 @@
-Coding challenge or existing code?
-==================================
+Coding Challenge Guidelines
+===========================
 
-The [coding challenge](coding_challenge.md) is optional if you already have some code that you're proud of and can share with us.
+If you don't have code to share, you can work on our coding challenge described
+below. 
 
-Existing code
--------------
+Please organize, design, test, document and deploy your code as if it were
+going into production, then send us a link to the hosted repository (e.g.
+Github, Bitbucket...).
 
-If you have existing code, please follow the following guidelines:
+Functional spec
+---------------
 
-* Include a link to the hosted repository (e.g. Github, Bitbucket...). We cannot review archives or single files.
-* The repo should include a README that follows the [principles described below](#readme) In particular, please make sure to include high-level explanation about what the code is doing.
-* Ideally, the code you're providing:
-  * Has been written by you alone. If not, please tell us which part you wrote and are most proud of in the README.
-    * Is leveraging web technologies.
-      * Is deployed and hosted somewhere.
+Prototype **one** of the following projects:
 
-      Readme
-      ------
+1. Departure Times
+2. SF Movies
+3. Email Service
+4. Food Trucks
 
-      Regardless of whether it's your own code or our coding challenge, write your README as if it was for a production service. Include the following items:
+The UX/UI is totally up to you. If you like, get creative and add additional
+features a user might find useful!
 
-      * Description of the problem and solution.
-      * Whether the solution focuses on back-end, front-end or if it's full stack.
-      * Reasoning behind your technical choices, including architectural. 
-      * Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
-      * Link to other code you're particularly proud of.
-      * Link to your resume or public profile.
-      * Link to to the hosted application where applicable.
+### Departure Times
 
-      How we review
-      -------------
+Create a service that gives real-time departure time for public transportation
+(use freely available public API). The app should geolocalize the user.
 
-      Your application will be reviewed by at least three of our engineers. We do take into consideration your experience level.
+Here are some examples of freely available data:
 
-      **We value quality over feature-completeness**. It is fine to leave things aside provided you call them out in your project's README. The goal of this code sample is to help us identify what you consider production-ready code. You should consider this code ready for final review with your colleague, i.e. this would be the last step before deploying to production.
+* [511](http://511.org/developer-resources_transit-api.asp) (San Francisco)
+* [Nextbus](http://www.nextbus.com/xmlFeedDocs/NextBusXMLFeed.pdf) (San
+  Francisco)
+* [Transport for London Unified API](https://api.tfl.gov.uk/) (London)
 
-      The aspects of your code we will assess include:
+### SF Movies
 
-      * **Architecture**: how clean is the separation between the front-end and the back-end?
-      * **Clarity**: does the README clearly and concisely explains the problem and solution? Are technical tradeoffs explained?
-      * **Correctness**: does the application do what was asked? If there is anything missing, does the README explain why it is missing?
-      * **Code quality**: is the code simple, easy to understand, and maintainable?  Are there any code smells or other red flags? Does object-oriented code follows principles such as the single responsibility principle? Is the coding style consistent with the language's guidelines? Is it consistent throughout the codebase?
-      * **Security**: are there any obvious vulnerability?
-      * **Testing**: how thorough are the automated tests? Will they be difficult to change if the requirements of the application were to change? Are there some unit and some integration tests?
-      	* We're not looking for full coverage (given time constraint) but just trying to get a feel for your testing skills.
-	* **UX**: is the web interface understandable and pleasing to use? Is the API intuitive?
-	* **Technical choices**: do choices of libraries, databases, architecture etc. seem appropriate for the chosen application?
+Create a service that shows on a map where movies have been filmed in San
+Francisco. The user should be able to filter the view using autocompletion
+search.
 
-	Bonus point (those items are optional):
+The data is available on [DataSF](http://www.datasf.org/): [Film
+Locations](https://data.sfgov.org/Arts-Culture-and-Recreation-/Film-Locations-in-San-Francisco/yitu-d5am).
 
-	* **Scalability**: will technical choices scale well? If not, is there a discussion of those choices in the README? 
-	* **Production-readiness**: does the code include monitoring? logging? proper error handling?
+### Email Service
+
+Create a service that accepts the necessary information and sends emails. It
+should provide an abstraction between two different email service providers.
+If one of the services goes down, your service can quickly failover to
+a different provider without affecting your customers.
+
+Example Email Providers:
+
+* [SendGrid](https://sendgrid.com/user/signup) - [Simple Send Documentation](https://sendgrid.com/docs/API_Reference/Web_API/mail.html)
+* [Mailgun](http://www.mailgun.com) - [Simple Send Documentation](http://documentation.mailgun.com/quickstart.html#sending-messages)
+* [SparkPost](https://www.sparkpost.com/) - [Developer Hub](https://developers.sparkpost.com/)
+* [Amazon SES](http://aws.amazon.com/ses/) - [Simple Send Documentation](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html)
+
+All listed services are free to try and are pretty painless to sign up for, so
+please register your own test accounts on each.
+
+### Food Trucks
+
+Create a service that tells the user what types of food trucks might be found
+near a specific location on a map.
+
+The data is available on [DataSF](http://www.datasf.org/): [Food
+Trucks](https://data.sfgov.org/Permitting/Mobile-Food-Facility-Permit/rqzj-sfat)
+
+Technical spec
+--------------
+
+The architecture will be split between a back-end and a web front-end, for
+instance providing a JSON in/out RESTful API. Feel free to use any other
+technologies provided that the general client/service architecture is
+respected.
+
+Choose **one** of the following technical tracks that best suits your skillset:
+
+1. **Full-stack**: include both front-end and back-end.
+2. **Back-end track**: include a minimal front-end (e.g. a static view or API
+   docs). Write, document and test your API as if it will be used by other
+   services.
+3. **Front-end track**: include a minimal back-end, or use the data service
+   directly. Focus on making the interface as polished as possible.
+
+### Back-end
+
+We believe there is no one-size-fits-all technology. Good engineering is about
+using the right tool for the right job, and constantly learning about them.
+Therefore, feel free to mention in your `README` how much experience you have
+with the technical stack you choose, we will take note of that when reviewing
+your challenge.
+
+Here are some technologies we are more familiar with:
+
+* Python
+* JavaScript
+* Ruby
+* PHP
+* Go
+* C++
+* Haskell
+* Java
+
+You are also free to use any web framework. If you choose to use a framework
+that results in boilerplate code in the repository, please detail in your
+README which code was written by you (as opposed to generated code).
+
+### Front-end
+
+The front-end should ideally be a single page app with a single `index.html`
+linking to external JS/CSS/etc. You may take this opportunity to demonstrate
+your CSS3 or HTML5 knowledge.
+
+Host it!
+--------
+
+When you’re done, host it somewhere (e.g. on Amazon EC2, Heroku, Google AppEngine, etc.).
+
+How will we review?
+-------------------
+
+[Guidelines can be found here](https://github.com/uber/coding-challenge-tools/blob/master/README.md)
